@@ -1,0 +1,8 @@
+User was denied access when running docker build command.
+This happens when the user is not in the docker group and is unprivileged.
+
+solution: Add the user to docker group
+>sudo usermod -a -G docker $USER
+
+Then change your users group ID to docker (to avoid having to log out and log in again):
+>newgrp docker
